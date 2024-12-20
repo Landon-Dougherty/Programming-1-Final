@@ -1,21 +1,11 @@
-import turtle
-
-test = turtle.Screen()
-test.bgcolor("black")
-test.title("Plinko Tester")
-
-ball = turtle.Turtle()
-
-
-
-
-
-'''import pygame
+import pygame
 
 pygame.init()
 
 WIDTH = 1000
 HEIGHT = 600
+
+
 
 screen_res = (WIDTH, HEIGHT)
  
@@ -29,6 +19,10 @@ WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
 ORANGE = (255, 165, 0)
 CENTER = [WIDTH//2, HEIGHT//2]
+
+ball = 1
+
+
 
  
 #Make A Circle
@@ -100,6 +94,39 @@ while True:
     # MIDDLE WHITE ONE BELOW
     pygame.draw.rect(screen, WHITE, [400, 450, 200, 17.5])
 
-    pygame.display.flip()'''
+
+
+
+
+    pygame.display.flip()
+
+
+
+
+
+
+    '''import turtle
+
+test = turtle.Screen()
+test.bgcolor("black")
+test.title("Plinko Tester")
+
+ball = turtle.Turtle()
+ball.shape("circle")
+ball.color("Green")
+ball.speed(0)
+ball.goto(0, 200)
+ball.dy = -2
+
+gravity = 0.2
+
+while True:
+    ball.dy -= gravity
+    ball.sety(ball.ycor() + ball.dy)
+
+    if ball.ycor() < -300:
+        ball.dy *= -1'''
+
+
 
 
