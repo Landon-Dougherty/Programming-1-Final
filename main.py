@@ -1,4 +1,16 @@
-import pygame
+import turtle
+
+test = turtle.Screen()
+test.bgcolor("black")
+test.title("Plinko Tester")
+
+ball = turtle.Turtle()
+
+
+
+
+
+'''import pygame
 
 pygame.init()
 
@@ -88,7 +100,6 @@ while True:
     # MIDDLE WHITE ONE BELOW
     pygame.draw.rect(screen, WHITE, [400, 450, 200, 17.5])
 
-    pygame.display.flip()
-
+    pygame.display.flip()'''
 
 
