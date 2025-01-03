@@ -17,3 +17,4 @@ while True:
     if ball.ycor() < -height / 2:
         velocity = -velocity
     window.update()
+
