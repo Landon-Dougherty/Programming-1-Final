@@ -1,8 +1,10 @@
 import time
 import pygame
+import keyboard
 import random
 
 '''REFERERNCES
+    https://www.geeksforgeeks.org/how-to-set-up-the-game-loop-in-pyggame/ FOR PYGAME GAME LOOP 
     https://www.geeksforgeeks.org/stimulate-bouncing-game-using-pygame/  USED TO MAKE BALL MOVE
     https://stackoverflow.com/questions/16044229/how-to-get-keyboard-input-in-pygame USED AT SOME POINT BUT NEVER GOT WORKING YET
     https://www.makeuseof.com/pygame-game-scores-displaying-updating/ USED TO DISPLAY MONEY, BUT SCOREBOARD IS MADE BY YOURS TRULY. 
@@ -40,7 +42,7 @@ Bet = 10
 LastWin = 0
 
 
-# Gravity
+
 
 
 
@@ -62,6 +64,8 @@ ball_obj = pygame.draw.circle(screen, RED, center=[WIDTH // 2, 100], radius=7.5)
 
 while True:
     for event in pygame.event.get():
+        if event.type == pygame.MOUSEWHEEL:
+            Money = Money + 12500
         if event.type == pygame.QUIT:
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -207,8 +211,10 @@ while True:
         BadBet = True
     while BadBet:
         ball_obj = pygame.draw.circle(screen, RED, center=[WIDTH // 2, 100], radius=7.5)
+        pygame.draw.rect(screen, BETBACK, [WIDTH//2 - 250, 150, 500, 50])
         test = font.render("BET MUST BE IN YOUR BUDGET", 1, (0, 255, 0))
-        screen.blit(test, (WIDTH//2 - 200, 150))
+        screen.blit(test, (WIDTH//2 - 225, 150))
+
         break
     # endregion Make Ball Move With Bet
 
@@ -478,7 +484,7 @@ while True:
         pass
     if Money >= 99999:
         RecentWin = font.render(f"YOU WIN! RESTART IF YOU WANT TO PLAY AGAIN", 1, (0, 255, 0))
-        screen.blit(RecentWin, (WIDTH//2 - 250, 100))
+        screen.blit(RecentWin, (WIDTH//2 - 100, 100))
     # endregion Scoreboard
 
 
