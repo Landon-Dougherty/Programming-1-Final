@@ -483,8 +483,17 @@ while True:
     else:
         pass
     if Money >= 99999:
-        RecentWin = font.render(f"YOU WIN! RESTART IF YOU WANT TO PLAY AGAIN", 1, (0, 255, 0))
-        screen.blit(RecentWin, (WIDTH//2 - 100, 100))
+        win = True
+        while win:
+            try:
+                RecentWin = font.render(f"YOU WIN! RESTART IF YOU WANT TO CONTINUE", 1, (0, 255, 0))
+                screen.blit(RecentWin, (WIDTH//2 -300, 100))
+                ball_obj.center = [WIDTH//2, 100]
+                break
+            except:
+                pass
+
+
     # endregion Scoreboard
 
 
